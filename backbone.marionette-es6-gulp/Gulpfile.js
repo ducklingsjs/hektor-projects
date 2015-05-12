@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 
 var H = require('hektor-gulp')(gulp).load({
-  sass: {},
-  browserify: {
+  styles: {},
+  scripts: {
     aliasify: {
       aliases: {
         underscore: 'lodash',
@@ -11,6 +11,12 @@ var H = require('hektor-gulp')(gulp).load({
     },
     debug: true
   },
-  connect: {},
+  connect: {
+    root: ['.tmp', 'app'],
+    port: 9100,
+    livereload: {
+      port: 10100
+    }
+  },
   serve: {}
 });
