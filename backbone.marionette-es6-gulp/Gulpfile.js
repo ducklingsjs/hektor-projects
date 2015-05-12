@@ -8,7 +8,8 @@ var H = require('hektor-gulp')(gulp).load({
         underscore: 'lodash',
         marionette: 'backbone.marionette'
       }
-    }
+    },
+    debug: true
   },
   connect: {},
   serve: {}
