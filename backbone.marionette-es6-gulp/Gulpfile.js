@@ -3,12 +3,13 @@ var gulp = require('gulp');
 var H = require('hektor-gulp')(gulp).load({
   styles: {},
   scripts: {
-    aliasify: {
+    moduleSystemConfig: {
       aliases: {
         underscore: 'lodash',
         marionette: 'backbone.marionette'
       }
     },
+    transpiler: 'babel',
     debug: true
   },
   connect: {
