@@ -19,5 +19,8 @@ var H = require('hektor-gulp')(gulp).load({
       port: 10100
     }
   },
-  serve: {}
+  serve: {},
+  codecheck: {
+    fail: true
+  }
 }, true);
