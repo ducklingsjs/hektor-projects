@@ -21,6 +21,5 @@ Project scaffolding &amp; dev dependency manager tool
 
 # TODO
   * backbone.marionette-requirejs
-  * backbone.marionette-browserify
   * angular
   * flux + react
