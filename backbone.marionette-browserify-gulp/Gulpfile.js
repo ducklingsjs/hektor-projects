@@ -20,4 +20,4 @@ var H = require('hektor-gulp')(gulp).load({
     }
   },
   serve: {}
-});
+}, true);
