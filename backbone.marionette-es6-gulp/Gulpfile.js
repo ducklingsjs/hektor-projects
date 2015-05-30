@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 
 var H = require('hektor-gulp')(gulp).load({
-  styles: {},
   scripts: {
     moduleSystemConfig: {
       aliases: {
@@ -19,8 +18,22 @@ var H = require('hektor-gulp')(gulp).load({
       port: 10100
     }
   },
-  serve: {},
   codecheck: {
     fail: true
+  },
+  replace: {
+    from: '{{build-time}}',
+    to: function() { return (new Date()).toString(); }
+  },
+  serve: {
+    watch: [
+      {
+        path: '<%= paths.app %>/styles/{,**/}*.scss',
+        tasks: ['styles']
+      }, {
+        path: '<%= paths.app %>/scripts/{,**/}*.{js,hbs}',
+        tasks: ['scripts', 'replace']
+      }
+    ]
   }
 }, true);
