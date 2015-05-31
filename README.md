@@ -19,6 +19,13 @@ Project scaffolding &amp; dev dependency manager tool
   * Browserify
   * Gulp
 
+* backbone.marionette-browserify-gulp-loco
+  * Backbone
+  * Marionette
+  * Browserify
+  * Gulp
+  * loco-sass
+
 # TODO
   * backbone.marionette-requirejs
   * angular

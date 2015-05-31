@@ -1,0 +1,15 @@
+@import '../../node_modules/modularized-normalize-scss/normalize';
+@import '../../node_modules/hektor-utils/sass/common';
+
+@import 'screens/main';
+
+body {
+  background: #FFFFFF;
+  color: #000000;
+  font-family: Arial, serif;
+  font-size: 14px;
+}
+
+.title {
+  color: #FF00FF;
+}
