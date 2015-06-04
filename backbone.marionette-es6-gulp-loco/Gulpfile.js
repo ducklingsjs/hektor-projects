@@ -51,5 +51,9 @@ var H = require('hektor-gulp')(gulp).load({
         tasks: ['scripts', 'replace']
       }
     ]
+  },
+  build: {
+    moduleName: 'sequence',
+    tasks: ['styles', 'scripts', 'codecheck', 'minify', 'rev']
   }
 }, true);
