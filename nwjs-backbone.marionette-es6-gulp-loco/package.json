@@ -1,0 +1,26 @@
+{
+  "name": "nwjs-backbone.marionette-es6-gulp-loco",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.html",
+  "scripts": {
+    "precommit": "gulp codecheck"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backbone": "^1.2.0",
+    "backbone.marionette": "^2.4.1",
+    "handlebars": "^3.0.3",
+    "hektor-utils": "git://github.com/infinumjs/hektor-utils",
+    "jquery": "^2.1.4",
+    "lodash": "^3.8.0"
+  },
+  "devDependencies": {
+    "babel": "^5.2.17",
+    "gulp": "^3.8.11",
+    "hektor-gulp": "git://github.com/infinumjs/hektor-gulp",
+    "husky": "^0.7.0",
+    "modularized-normalize-scss": "^3.0.3"
+  }
+}
