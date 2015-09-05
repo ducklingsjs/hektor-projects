@@ -1,12 +1,22 @@
+'use strict';
+
 var gulp = require('gulp');
 
-var H = require('hektor-gulp')(gulp).load({
+require('hektor-gulp')(gulp).load({
   scripts: {
     moduleSystemConfig: {
       aliases: {
         underscore: 'lodash',
         marionette: 'backbone.marionette'
-      }
+      },
+      vendors: [
+        'backbone',
+        'backbone.marionette',
+        'jquery',
+        'lodash',
+        'babel/polyfill',
+        'handlebars/runtime'
+      ]
     },
     transpiler: 'babel',
     debug: true
@@ -23,7 +33,9 @@ var H = require('hektor-gulp')(gulp).load({
   },
   replace: {
     from: '{{build-time}}',
-    to: function() { return (new Date()).toString(); }
+    to: function() {
+      return (new Date()).toString();
+    }
   },
   serve: {
     watch: [
@@ -33,6 +45,9 @@ var H = require('hektor-gulp')(gulp).load({
       }, {
         path: '<%= paths.app %>/scripts/{,**/}*.{js,hbs}',
         tasks: ['scripts', 'replace']
+      }, {
+        path: 'node_modules/{,**/}*.{js}',
+        tasks: ['vendor-scripts']
       }
     ]
   }
