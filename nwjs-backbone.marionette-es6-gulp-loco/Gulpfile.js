@@ -6,8 +6,6 @@ if (process.env.NODE_PATH) {
   nodePath = paths.concat(nodePath);
 }
 
-console.log(nodePath);
-
 var H = require('hektor-gulp')(gulp).load({
   scripts: {
     moduleSystemConfig: {
@@ -52,8 +50,23 @@ var H = require('hektor-gulp')(gulp).load({
       }
     ]
   },
+  copy: {
+    dest: '<%= paths.dist %>',
+    paths: [
+      '<%= paths.app %>/fonts',
+      '<%= paths.app %>/images',
+      'package.json'
+    ]
+  },
+  rev: {
+    src: [
+      '<%= paths.dist %>/**',
+      '!<%= paths.dist %>/**.html',
+      '!<%= paths.dist %>/package.json'
+    ]
+  },
   build: {
     moduleName: 'sequence',
-    tasks: ['styles', 'scripts', 'codecheck', 'minify', 'rev']
+    tasks: ['styles', 'scripts', 'codecheck', 'clean', 'minify', 'copy', 'rev']
   }
 }, true);

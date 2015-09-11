@@ -1,7 +1,6 @@
 'use strict';
 
 import Backbone from 'backbone';
-import $ from 'jquery';
 
 import MainView from 'views/main';
 
@@ -11,6 +10,6 @@ export default Backbone.Router.extend({
   },
   index() {
     var view = new MainView();
-    view.render().el;
+    view.render();
   }
 });

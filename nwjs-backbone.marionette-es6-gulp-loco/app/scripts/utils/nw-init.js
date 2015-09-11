@@ -1,3 +1,5 @@
+'use strict';
+
 // For some reason babel polyfill thinks it's already initialized...
 delete global._babelPolyfill;
 
